@@ -8,7 +8,7 @@
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Belapp - Your Service Booking App" />
   <meta property="og:description" content="Find and book healthcare, barber shops, beauty services, and more. Manage appointments and enjoy a seamless experience as both a user and a business owner." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/issuran/belapp-oficial.github.io/refs/heads/main/resources/icon/logo.png" /> <!-- Replace with your image URL -->
+  <meta property="og:image" content="https://raw.githubusercontent.com/issuran/belapp-oficial.github.io/refs/heads/main/resources/icon/logo.png" />
   <meta property="og:url" content="https://belapp.com.br/" />
   <meta property="og:type" content="website" />
 
@@ -38,6 +38,7 @@
     .header {
       background-color: rgb(134, 93, 160); /* New RGB Color */
       animation: fadeInDown 2s ease-out;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
     .feature-list {
@@ -94,8 +95,8 @@
   <!-- Header Section -->
   <header class="text-white text-center py-5 header">
     <div class="container">
-      <h1 id="project-name" class="display-4">Belapp - Your Service Booking App</h1>
-      <p class="lead" id="project-subtitle">Connecting you with the best services in your area.</p>
+      <h1 id="project-name" class="display-4"></h1>
+      <p class="lead" id="project-subtitle"></p>
     </div>
   </header>
 
@@ -105,11 +106,8 @@
       <!-- Section for Users -->
       <div class="row align-items-center section-bg mb-5 feature-list">
         <div class="col-md-6">
-          <h2 class="display-5" id="title-users">For Users</h2>
+          <h2 class="display-5" id="title-users"></h2>
           <ul class="list-group list-group-flush" id="user-list">
-            <li class="list-group-item">Search for services near you across various categories like healthcare, barbershops, nail salons, and more.</li>
-            <li class="list-group-item">Book appointments instantly with a few taps and receive confirmation.</li>
-            <li class="list-group-item">Manage your appointments by viewing upcoming bookings and rescheduling as needed.</li>
           </ul>
         </div>
         <div class="col-md-6 text-center">
@@ -123,11 +121,8 @@
           <img src="resources/assets/owner.jpg" class="feature-img" alt="Business owners managing services">
         </div>
         <div class="col-md-6">
-          <h2 class="display-5" id="title-owners">For Business Owners</h2>
+          <h2 class="display-5" id="title-owners"></h2>
           <ul class="list-group list-group-flush" id="owner-list">
-            <li class="list-group-item">Create and edit establishments, update service offerings, and add new services to stay ahead.</li>
-            <li class="list-group-item">Manage employees: Add, remove, or modify employee details and their schedules.</li>
-            <li class="list-group-item">Track appointments: View, accept, or decline bookings and keep your schedule organized.</li>
           </ul>
         </div>
       </div>
@@ -153,6 +148,71 @@
       <a href="https://www.belapp.com/terms" target="_blank">Terms</a>
     </div>
   </footer>
+
+  <!-- Script for language localization -->
+  <script>
+    const translations = {
+      en: {
+        projectName: "Belapp - Your Service Booking App",
+        projectSubtitle: "Connecting you with the best services in your area.",
+        titleUsers: "For Users",
+        titleOwners: "For Business Owners",
+        userList: [
+          "Search for services near you across various categories like healthcare, barbershops, nail salons, and more.",
+          "Book appointments instantly with a few taps and receive confirmation.",
+          "Manage your appointments by viewing upcoming bookings and rescheduling as needed."
+        ],
+        ownerList: [
+          "Create and edit establishments, update service offerings, and add new services to stay ahead.",
+          "Manage employees: Add, remove, or modify employee details and their schedules.",
+          "Track appointments: View, accept, or decline bookings and keep your schedule organized."
+        ]
+      },
+      pt: {
+        projectName: "Belapp - Seu App de Agendamentos",
+        projectSubtitle: "Conectando você aos melhores serviços na sua região.",
+        titleUsers: "Para Usuários",
+        titleOwners: "Para Proprietários",
+        userList: [
+          "Pesquise serviços perto de você em diversas categorias como saúde, barbearias, salões de beleza e muito mais.",
+          "Agende compromissos instantaneamente com alguns toques e receba a confirmação.",
+          "Gerencie seus compromissos visualizando reservas futuras e reagendando conforme necessário."
+        ],
+        ownerList: [
+          "Crie e edite estabelecimentos, atualize as ofertas de serviços e adicione novos serviços para se manter à frente.",
+          "Gerencie funcionários: Adicione, remova ou modifique os detalhes e horários dos funcionários.",
+          "Acompanhe compromissos: Visualize, aceite ou rejeite reservas e mantenha sua agenda organizada."
+        ]
+      }
+    };
+
+    // Detect the user's language/locale
+    const userLanguage = navigator.language || navigator.userLanguage;
+    const lang = userLanguage.startsWith('pt') ? 'pt' : 'en'; // Defaults to English if not Portuguese
+
+    // Apply translations based on detected language
+    const translation = translations[lang];
+    document.getElementById('project-name').innerText = translation.projectName;
+    document.getElementById('project-subtitle').innerText = translation.projectSubtitle;
+    document.getElementById('title-users').innerText = translation.titleUsers;
+    document.getElementById('title-owners').innerText = translation.titleOwners;
+
+    const userListElement = document.getElementById('user-list');
+    translation.userList.forEach(text => {
+      const li = document.createElement('li');
+      li.classList.add('list-group-item');
+      li.innerText = text;
+      userListElement.appendChild(li);
+    });
+
+    const ownerListElement = document.getElementById('owner-list');
+    translation.ownerList.forEach(text => {
+      const li = document.createElement('li');
+      li.classList.add('list-group-item');
+      li.innerText = text;
+      ownerListElement.appendChild(li);
+    });
+  </script>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
