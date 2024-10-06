@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "X9469P8892.br.com.oliveira.Belapp",
+        "paths": [ "/establishment/*" ]
+      }
+    ]
+  }
+}
