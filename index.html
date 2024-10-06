@@ -1,9 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Hello world!</title>
-        <link rel="stylesheet" href="resources/css/style.css">
-        <link rel="icon" href="resources/assets/site-icon.png">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="app-name">Belapp - Your Service Booking App</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f0f0, #a8dadc);
+    }
+
+    .section-bg {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .feature-img {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .feature {
+      margin-bottom: 30px;
+    }
+
+    .header {
+      background-color: rgb(134, 93, 160); /* New RGB Color */
+      animation: fadeInDown 2s ease-out;
+    }
+
+    .feature-list {
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    .footer a {
+      color: #6c757d;
+      margin-right: 15px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+      color: #495057;
+    }
+
+    .store-buttons img {
+      max-width: 180px; /* Adjust size as necessary */
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="text-white text-center py-5 header">
+    <div class="container">
+      <h1 id="project-name" class="display-4">Belapp - Your Service Booking App</h1>
+      <p class="lead" id="project-subtitle">Connecting you with the best services in your area.</p>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <section class="py-5">
+    <div class="container">
+      <!-- Section for Users -->
+      <div class="row align-items-center section-bg mb-5 feature-list">
+        <div class="col-md-6">
+          <h2 class="display-5" id="title-users">For Users</h2>
+          <ul class="list-group list-group-flush" id="user-list">
+            <li class="list-group-item">Search for services near you across various categories like healthcare, barbershops, nail salons, and more.</li>
+            <li class="list-group-item">Book appointments instantly with a few taps and receive confirmation.</li>
+            <li class="list-group-item">Manage your appointments by viewing upcoming bookings and rescheduling as needed.</li>
+          </ul>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="resources/assets/user.jpg" class="feature-img" alt="User booking services">
+        </div>
+      </div>
+
+      <!-- Section for Business Owners -->
+      <div class="row align-items-center section-bg mb-5 feature-list">
+        <div class="col-md-6 text-center">
+          <img src="resources/assets/owner.jpg" class="feature-img" alt="Business owners managing services">
+        </div>
+        <div class="col-md-6">
+          <h2 class="display-5" id="title-owners">For Business Owners</h2>
+          <ul class="list-group list-group-flush" id="owner-list">
+            <li class="list-group-item">Create and edit establishments, update service offerings, and add new services to stay ahead.</li>
+            <li class="list-group-item">Manage employees: Add, remove, or modify employee details and their schedules.</li>
+            <li class="list-group-item">Track appointments: View, accept, or decline bookings and keep your schedule organized.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Buttons for App Store and Google Play -->
+      <div class="text-center mt-5 store-buttons">
+        <a href="https://apps.apple.com/" target="_blank">
+          <img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-apple-f1f919205b.svg" alt="Download on the Apple Store">
+        </a>
+        <a href="https://play.google.com/" target="_blank">
+          <img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p>© 2024 Belapp.</p>
+      <a href="https://www.belapp.com/privacy" target="_blank">Privacy</a>
+      <a href="https://www.belapp.com/accessibility" target="_blank">Accessibility</a>
+      <a href="https://www.belapp.com/terms" target="_blank">Terms</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
