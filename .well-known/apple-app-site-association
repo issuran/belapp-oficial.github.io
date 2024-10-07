@@ -3,8 +3,13 @@
     "apps": [],
     "details": [
       {
-        "appID": "X9469P8892.br.com.oliveira.Belapp",
-        "paths": [ "/establishment/*" ]
+        "appIDs": ["X9469P8892.br.com.oliveira.Belapp"],
+        "components": [
+          {
+            "/": "/establishment/*",
+            "comment": "Matches any URL with a path that starts with /establishment/."
+          }
+        ]
       }
     ]
   }
