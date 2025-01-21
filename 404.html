@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Get the current path and query parameters
+        const path = window.location.pathname;
+        const queryParams = window.location.search;
+
+        // Check if the URL is for /establishment
+        if (path.startsWith('/establishment')) {
+            // Redirect to deeplink.html with the same query parameters
+            window.location.href = `/deeplink.html${queryParams}`;
+        } else {
+            // Redirect to the homepage or show a 404 message
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+    }
+    .store-buttons img {
+      max-width: 180px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body onload="handleDeeplink()">
+  <h1>Redirecting you to the app...</h1>
+  <p>If nothing happens, download our app using the links below:</p>
+  <div class="store-buttons">
+    <a href="https://apps.apple.com/app/idYOUR_APPLE_ID" target="_blank">
+      <img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-apple-f1f919205b.svg" alt="Download on the Apple Store">
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.yourapp.android" target="_blank">
+      <img src="https://d1a3f4spazzrp4.cloudfront.net/uber-com/1.3.8/d1a3f4spazzrp4.cloudfront.net/illustrations/app-store-google-4d63c31a3e.svg" alt="Get it on Google Play">
+    </a>
+  </div>
+
+  <script>
+    const appStoreLink = "https://apps.apple.com/app/idYOUR_APPLE_ID";
+    const playStoreLink = "https://play.google.com/store/apps/details?id=com.yourapp.android";
+    const fallbackUrl = "https://belapp.com.br"; // Fallback URL if needed
+
+    function handleDeeplink() {
+      const queryParams = window.location.search; // Extract query params
+      const deeplinkUrl = `belapp://establishment${queryParams}`; // Construct the deeplink URL
+
+      // Attempt to open the app
+      window.location.href = deeplinkUrl;
+
+      // Redirect to the App Store or Play Store after a delay if the app is not installed
+      setTimeout(() => {
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+          // iOS: Redirect to App Store
+          window.location.href = appStoreLink;
+        } else if (/Android/i.test(navigator.userAgent)) {
+          // Android: Redirect to Play Store
+          window.location.href = playStoreLink;
+        } else {
+          // Fallback for other devices
+          window.location.href = fallbackUrl;
+        }
+      }, 2000); // Adjust delay as necessary
+    }
+  </script>
+</body>
+</html>
