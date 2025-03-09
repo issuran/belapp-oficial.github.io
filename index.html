@@ -93,6 +93,43 @@
       max-width: 180px; /* Adjust size as necessary */
       margin: 10px;
     }
+
+    body {
+      background: linear-gradient(135deg, #f0f0f0, #F0F2F6);
+      font-family: Arial, sans-serif;
+    }
+    .section-bg {
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+    }
+    .comparison-table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    .comparison-table thead {
+      background-color: #6051B3;
+      color: #fff;
+    }
+    .premium {
+      font-weight: bold;
+      color: #6051B3;
+    }
+    .premium-note {
+      background-color: #eee;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      border-left: 5px solid #6051B3;
+    }
   </style>
 </head>
 <body>
@@ -132,6 +169,109 @@
         </div>
       </div>
 
+      <!-- Plan Comparison Section -->
+
+      <section class="py-5">
+        <div class="container">
+          <div class="row align-items-center section-bg mb-5 feature-list">
+            <div class="col-md-12">
+              <h2 id="comparison-title" class="text-center"></h2>
+              <table class="comparison-table table table-bordered">
+                <thead>
+                  <tr>
+                    <th id="feature-header"></th>
+                    <th id="free-header"></th>
+                    <th id="premium-header"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="employees-label"></td>
+                    <td>1</td>
+                    <td class="premium">10</td>
+                  </tr>
+                  <tr>
+                    <td id="services-label"></td>
+                    <td>5</td>
+                    <td class="premium">30</td>
+                  </tr>
+                  <tr>
+                    <td id="financial-label"></td>
+                    <td>&#10008;</td>
+                    <td class="premium">&#10004;</td>
+                  </tr>
+                  <tr>
+                    <td id="support-label"></td>
+                    <td id="support-free"></td>
+                    <td id="support-premium" class="premium"></td>
+                  </tr>
+                  <tr>
+                    <td id="schedule-label"></td>
+                    <td id="schedule-free"></td>
+                    <td id="schedule-premium" class="premium"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p id="premium-note" class="premium-note mt-3"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<script>
+  const translations = {
+    en: {
+      comparisonTitle: "Plan Comparison",
+      featureHeader: "Features",
+      freeHeader: "Free Plan",
+      premiumHeader: "Premium Plan",
+      employeesLabel: "Employee Registration",
+      servicesLabel: "Service Registration",
+      financialLabel: "Financial Data Access",
+      supportLabel: "Support",
+      supportFree: "Low priority",
+      supportPremium: "High priority",
+      scheduleLabel: "Scheduling",
+      scheduleFree: "View appointments",
+      schedulePremium: "Detailed appointment info",
+      premiumNote: "Premium users have priority in new features, and improvement suggestions will always be considered to make the app the best possible for our customers!"
+    },
+    pt: {
+      comparisonTitle: "Comparação de Planos",
+      featureHeader: "Recursos",
+      freeHeader: "Plano Gratuito",
+      premiumHeader: "Plano Premium",
+      employeesLabel: "Cadastro de Funcionários",
+      servicesLabel: "Cadastro de Serviços",
+      financialLabel: "Acesso a Dados Financeiros",
+      supportLabel: "Suporte",
+      supportFree: "Baixa prioridade",
+      supportPremium: "Alta prioridade",
+      scheduleLabel: "Agenda",
+      scheduleFree: "Visualização de agendamentos",
+      schedulePremium: "Detalhes do agendamento",
+      premiumNote: "Usuários premium terão preferência em novas funcionalidades e sugestões de melhorias serão sempre ouvidas e implementadas para tornar o app o melhor possível para atender nossos clientes!"
+    }
+  };
+  
+  const lang = navigator.language.startsWith('pt') ? 'pt' : 'en';
+  const translation = translations[lang];
+  document.getElementById('comparison-title').innerText = translation.comparisonTitle;
+  document.getElementById('feature-header').innerText = translation.featureHeader;
+  document.getElementById('free-header').innerText = translation.freeHeader;
+  document.getElementById('premium-header').innerText = translation.premiumHeader;
+  document.getElementById('employees-label').innerText = translation.employeesLabel;
+  document.getElementById('services-label').innerText = translation.servicesLabel;
+  document.getElementById('financial-label').innerText = translation.financialLabel;
+  document.getElementById('support-label').innerText = translation.supportLabel;
+  document.getElementById('support-free').innerText = translation.supportFree;
+  document.getElementById('support-premium').innerText = translation.supportPremium;
+  document.getElementById('schedule-label').innerText = translation.scheduleLabel;
+  document.getElementById('schedule-free').innerText = translation.scheduleFree;
+  document.getElementById('schedule-premium').innerText = translation.schedulePremium;
+  document.getElementById('premium-note').innerText = translation.premiumNote;
+</script>
+
       <!-- Buttons for App Store and Google Play -->
       <div class="text-center mt-5 store-buttons">
         <a href="https://apps.apple.com/" target="_blank">
@@ -154,7 +294,7 @@
 
   <!-- Script for language localization -->
   <script>
-    const translations = {
+    const translations2 = {
       en: {
         projectName: "Belapp - Your Service Booking App",
         projectSubtitle: "Connecting you with the best services in your area.",
@@ -190,18 +330,18 @@
     };
 
     // Detect the user's language/locale
-    const userLanguage = navigator.language || navigator.userLanguage;
-    const lang = userLanguage.startsWith('pt') ? 'pt' : 'en'; // Defaults to English if not Portuguese
+    const userLanguage2 = navigator.language || navigator.userLanguage;
+    const lang2 = userLanguage2.startsWith('pt') ? 'pt' : 'en'; // Defaults to English if not Portuguese
 
     // Apply translations based on detected language
-    const translation = translations[lang];
-    document.getElementById('project-name').innerText = translation.projectName;
-    document.getElementById('project-subtitle').innerText = translation.projectSubtitle;
-    document.getElementById('title-users').innerText = translation.titleUsers;
-    document.getElementById('title-owners').innerText = translation.titleOwners;
+    const translation2 = translations2[lang2];
+    document.getElementById('project-name').innerText = translation2.projectName;
+    document.getElementById('project-subtitle').innerText = translation2.projectSubtitle;
+    document.getElementById('title-users').innerText = translation2.titleUsers;
+    document.getElementById('title-owners').innerText = translation2.titleOwners;
 
     const userListElement = document.getElementById('user-list');
-    translation.userList.forEach(text => {
+    translation2.userList.forEach(text => {
       const li = document.createElement('li');
       li.classList.add('list-group-item');
       li.innerText = text;
@@ -209,7 +349,7 @@
     });
 
     const ownerListElement = document.getElementById('owner-list');
-    translation.ownerList.forEach(text => {
+    translation2.ownerList.forEach(text => {
       const li = document.createElement('li');
       li.classList.add('list-group-item');
       li.innerText = text;
